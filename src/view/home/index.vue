@@ -1,49 +1,32 @@
 <!--  -->
 <template>
-  <div class="memall_welcome">
-       <div>欢迎使用MeMall商家支撑系统</div>
-  </div>
+	<div class="memall_welcome">
+		<div>欢迎使用美妙心选商家后台</div>
+	</div>
 </template>
 
 <script>
-import {test} from '@/api/newJson/index.js'
 export default {
-  data () {
-    return {
+	data() {
+		return {}
+	},
 
-    };
-  },
+	components: {},
 
-  components: {},
+	computed: {},
 
-  computed: {},
+	mounted() {},
 
-  mounted(){
-    this.getTest()
-  },
-
-  methods: {
-    getTest(){
-      test({
-        pageSize:20,
-        pageNum:1,
-      }).then(res=>{
-        console.log(res)
-      }).catch(error=>{
-        console.log(error)
-      })
-    }
-  }
+	methods: {},
 }
-
 </script>
-<style lang='scss' scoped>
-.memall_welcome{
-  width:100%;
-  height:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size:40px;
+<style lang="scss" scoped>
+.memall_welcome {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
 }
 </style>
