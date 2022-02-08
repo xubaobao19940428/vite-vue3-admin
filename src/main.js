@@ -7,7 +7,9 @@ import App from './App.vue'
 import store from './store/index'
 import globalMethods from '@/js/globalMethods'
 import './style/index.scss'
+import * as echarts from 'echarts'
 const app = createApp(App)
+app.config.globalProperties.$echarts = echarts
 Object.keys(globalMethods).forEach((key) => {
     app.config.globalProperties[key] = globalMethods[key]
 })

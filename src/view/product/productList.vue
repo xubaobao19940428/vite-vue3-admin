@@ -1,81 +1,4 @@
-<script setup>
-import {
-	productList,
-	deleteProduct,
-	updateShowSoldCount,
-} from '@/api/newJson/product'
-import { getSellers } from '@/api/newJson/shop'
-import { splitData } from '@/utils/index'
-import { add2Downstream } from '@/api/newJson/wxProduct'
-</script>
-<script>
-export default {
-	data() {
-		return {
-			timeList: [],
-			queryData: {
-				data: '',
-				shelveStatus: '',
-				sellerId: '',
-				title: '',
-				source: '',
-				productIds: [],
-				pageNum: 1,
-				pageSize: 20,
-			},
-			total: 0,
-			// activeName: 'first',
-			tableData: [],
-			supplierList: [],
-			selectProductList: [],
-		}
-	},
-	methods: {
-		//获取商家列表
-		getSellersList(params) {
-			getSellers(params)
-				.then((response) => {
-					if (response) {
-						this.supplierList = response.data.data
-					}
-				})
-				.catch((error) => {})
-		},
-		getProductList(type) {
-			if (type == 1) {
-				this.queryData.pageNum = 1
-			}
-			this.queryData.productIds = splitData(this.queryData.data) || []
-			productList(this.filterData(this.queryData))
-				.then((resultes) => {
-					if (resultes.data) {
-						this.tableData = resultes.data
-						this.total = resultes.total
-					}
-				})
-				.catch((error) => {})
-		},
-		handleSizeChange(val) {
-			this.queryData.pageSize = val
-			this.getProductList(0)
-		},
-		handleCurrentChange(val) {
-			this.queryData.pageNum = val
-			this.getProductList(0)
-		},
-	},
-	mounted() {
-		if (this.$route.query.sellerId) {
-			this.queryData.sellerId = Number(this.$route.query.sellerId)
-		}
-		this.getProductList(1)
-		this.getSellersList({
-			pageNum: 1,
-			pageSize: 1000,
-		})
-	},
-}
-</script>
+<!--  -->
 <template>
 	<div class="product_list app-container">
 		<div class="product-list-header">
@@ -280,7 +203,7 @@ export default {
 							>
 						</template>
 					</el-table-column>
-					<!-- <el-table-column label="商品360" align="center" width="200">
+					<el-table-column label="商品360" align="center" width="200">
 						<template #default="scope">
 							<router-link
 								:to="{
@@ -293,7 +216,7 @@ export default {
 								>
 							</router-link>
 						</template>
-					</el-table-column> -->
+					</el-table-column>
 					<el-table-column label="折扣" align="center">
 						<template #default="scope">
 							<span>{{
@@ -376,11 +299,217 @@ export default {
 		</div>
 	</div>
 </template>
+
+<script>
+import { ref, reactive } from 'vue'
+import {
+	productList,
+	deleteProduct,
+	updateShowSoldCount,
+} from '@/api/newJson/product'
+import { getSellers } from '@/api/newJson/shop'
+import { splitData } from '@/utils/index'
+import { add2Downstream } from '@/api/newJson/wxProduct'
+export default {
+	setup() {
+		const count = ref(0)
+		const defaultTime2 = ref([
+			new Date(2000, 1, 1, 0, 0, 0),
+			new Date(2000, 2, 1, 23, 59, 59),
+		]) //
+		const object = reactive({
+			foo: 'bar',
+		})
+		// 暴露到template中
+		return {
+			count,
+			object,
+			defaultTime2,
+		}
+	},
+	data() {
+		return {
+			timeList: [],
+			queryData: {
+				data: '',
+				shelveStatus: '',
+				sellerId: '',
+				title: '',
+				source: '',
+				productIds: [],
+				pageNum: 1,
+				pageSize: 20,
+			},
+			total: 0,
+			// activeName: 'first',
+			tableData: [],
+			supplierList: [],
+			selectProductList: [],
+		}
+	},
+	computed: {},
+	mounted() {
+		if (this.$route.query.sellerId) {
+			this.queryData.sellerId = Number(this.$route.query.sellerId)
+		}
+		this.getProductList(1)
+		this.getSellersList({
+			pageNum: 1,
+			pageSize: 1000,
+		})
+	},
+	methods: {
+		selectable(row, index) {
+			return !row.downstreamCount
+		},
+		//获取商家列表
+		getSellersList(params) {
+			getSellers(params)
+				.then((response) => {
+					if (response) {
+						this.supplierList = response.data.data
+					}
+				})
+				.catch((error) => {})
+		},
+		resetSearch() {
+			this.queryData.productId = ''
+			this.queryData.title = ''
+			this.queryData.data = ''
+			this.queryData.sellerId = ''
+			this.queryData.shelveStatus = ''
+			this.getProductList(1)
+		},
+		addProduct() {
+			this.$router.push({
+				name: 'addProduct',
+				query: {
+					type: 'add',
+				},
+			})
+		},
+		getProductList(type) {
+			if (type == 1) {
+				this.queryData.pageNum = 1
+			}
+			this.queryData.productIds = splitData(this.queryData.data) || []
+			productList(this.filterData(this.queryData))
+				.then((resultes) => {
+					if (resultes.data) {
+						this.tableData = resultes.data
+						this.total = resultes.total
+					}
+				})
+				.catch((error) => {})
+		},
+		handleSizeChange(val) {
+			this.queryData.pageSize = val
+			this.getProductList(0)
+		},
+		handleCurrentChange(val) {
+			this.queryData.pageNum = val
+			this.getProductList(0)
+		},
+		viewProduct(row) {
+			this.$router.push({
+				name: 'addProduct',
+				query: {
+					productId: row.id,
+					type: 'check',
+				},
+			})
+		},
+		editProduct(row) {
+			this.$router.push({
+				name: 'addProduct',
+				query: {
+					productId: row.id,
+					type: 'edit',
+				},
+			})
+		},
+		copyProduct(row) {
+			this.$router.push({
+				name: 'addProduct',
+				query: {
+					productId: row.id,
+					type: 'copy',
+				},
+			})
+		},
+		deleteProductInfo(data) {
+			let _this = this
+			_this
+				.$confirm('此操作讲永久删除该商品', '提示', {
+					confirmButtonText: '确定',
+					cancelButtonText: '取消',
+					type: 'warning',
+				})
+				.then(() => {
+					deleteProduct({
+						id: data.id,
+					}).then((res) => {
+						_this.$message.success('删除成功')
+						_this.getProductList(1)
+					})
+				})
+				.catch(() => {
+					_this.$message.info('取消删除')
+				})
+		},
+		//销量修改
+		updateProductSoldCount(data) {
+			updateShowSoldCount({
+				productId: data.id,
+				soldCount: data.showSoldCount,
+				hot: data.hot,
+			})
+				.then((response) => {
+					if (response) {
+						this.$message.success('修改成功')
+						this.getProductList(1)
+					}
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		},
+		//选择
+		handleSelectionChange(val) {
+			this.selectProductList = val
+		},
+		//商品同步到第三方(微信)
+		uploadWxProduct() {
+			if (this.selectProductList.length == 0) {
+				this.$message.warning('请挑选要同步到微信视频号的商品')
+				return
+			} else {
+				let productIds = this.selectProductList.map((item) => {
+					return item.id
+				})
+				add2Downstream({
+					productIds: productIds,
+				})
+					.then((response) => {
+						if (response) {
+							this.$message.success('已同步至微信视频号')
+							this.$refs.multipleTable.clearSelection()
+							this.selectProductList = []
+						}
+					})
+					.catch((error) => {
+						console.log(error)
+					})
+			}
+		},
+	},
+}
+</script>
+
 <style lang="scss" scoped>
 .product_list {
 	width: 100%;
 	height: 100%;
-	background: #eff0f4;
 	.product-list-header {
 		background-color: #fff;
 		padding: 0 10px;

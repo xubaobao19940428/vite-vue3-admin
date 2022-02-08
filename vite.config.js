@@ -2,10 +2,8 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import styleImport from 'vite-plugin-style-import'
-// import { useDynamicPublicPath } from 'vite-plugin-dynamic-publicpath'
 export default ({ mode }) => {
     const env = loadEnv(mode, process.cwd()) // 获取.env文件里定义的环境变量
-    console.log(env.VITE_APP_BASE_URL)
     return defineConfig({
         base: env.VITE_APP_BASE_URL,
         server: {
@@ -46,10 +44,6 @@ export default ({ mode }) => {
                     },
                 }, ],
             }),
-            // useDynamicPublicPath({
-            //     dynamicImportHandler: 'window.__dynamic_handler__',
-            //     dynamicImportPreload: 'window.__dynamic_preload__',
-            // }),
         ],
         resolve: {
             alias: {

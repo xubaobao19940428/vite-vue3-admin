@@ -1,0 +1,416 @@
+[
+    {
+        "subTypeName": "其它",
+        "subTypes": [
+            {
+                "subTypeName": "其它",
+                "subType": "0"
+            }
+        ],
+        "subType": "0"
+    },
+    {
+        "subTypeName": "烘焙糕点",
+        "subTypes": [
+            {
+                "subTypeName": "其它烘焙糕点",
+                "subType": "2015061690000028"
+            },
+            {
+                "subTypeName": "蛋糕面包",
+                "subType": "2015050700000044"
+            },
+            {
+                "subTypeName": "中式糕点",
+                "subType": "2020061100317490"
+            }
+        ],
+        "subType": "2015050700000006"
+    },
+    {
+        "subTypeName": "火锅",
+        "subTypes": [
+            {
+                "subTypeName": "川味/重庆火锅",
+                "subType": "2015050700000024"
+            },
+            {
+                "subTypeName": "云南火锅",
+                "subType": "2015050700000025"
+            },
+            {
+                "subTypeName": "老北京涮羊肉",
+                "subType": "2015050700000026"
+            },
+            {
+                "subTypeName": "港式火锅",
+                "subType": "2015050700000027"
+            },
+            {
+                "subTypeName": "鱼火锅",
+                "subType": "2015050700000028"
+            },
+            {
+                "subTypeName": "羊蝎子",
+                "subType": "2015050700000029"
+            },
+            {
+                "subTypeName": "炭火锅",
+                "subType": "2015050700000030"
+            },
+            {
+                "subTypeName": "韩式火锅",
+                "subType": "2015050700000031"
+            },
+            {
+                "subTypeName": "豆捞",
+                "subType": "2015050700000032"
+            },
+            {
+                "subTypeName": "其它火锅",
+                "subType": "2015050700000033"
+            },
+            {
+                "subTypeName": "泰式火锅",
+                "subType": "2020061100319366"
+            },
+            {
+                "subTypeName": "串串火锅",
+                "subType": "2020061100319367"
+            },
+            {
+                "subTypeName": "牛肉火锅",
+                "subType": "2020061100317489"
+            },
+            {
+                "subTypeName": "小火锅",
+                "subType": "2020061100315997"
+            },
+            {
+                "subTypeName": "本地鸡窝火锅",
+                "subType": "2021041900342058"
+            },
+            {
+                "subTypeName": "海鲜火锅",
+                "subType": "2021041900342057"
+            },
+            {
+                "subTypeName": "焖锅",
+                "subType": "2021041900340729"
+            },
+            {
+                "subTypeName": "猪肚鸡火锅",
+                "subType": "2021041900340728"
+            }
+        ],
+        "subType": "2015050700000002"
+    },
+    {
+        "subTypeName": "快餐小吃",
+        "subTypes": [
+            {
+                "subTypeName": "麻辣烫/串串香",
+                "subType": "2015050700000023"
+            },
+            {
+                "subTypeName": "熟食",
+                "subType": "2015050700000034"
+            },
+            {
+                "subTypeName": "面馆/面食",
+                "subType": "2015050700000035"
+            },
+            {
+                "subTypeName": "米粉/米线",
+                "subType": "2015050700000036"
+            },
+            {
+                "subTypeName": "地方特色小吃",
+                "subType": "2015050700000037"
+            },
+            {
+                "subTypeName": "西式快餐",
+                "subType": "2015050700000038"
+            },
+            {
+                "subTypeName": "中式快餐",
+                "subType": "2015050700000039"
+            },
+            {
+                "subTypeName": "日韩简餐",
+                "subType": "2020061100315998"
+            },
+            {
+                "subTypeName": "炸鸡炸串",
+                "subType": "2021041900339030"
+            }
+        ],
+        "subType": "2015050700000003"
+    },
+    {
+        "subTypeName": "其他美食",
+        "subTypes": [
+            {
+                "subTypeName": "清真菜",
+                "subType": "2016031800159501"
+            },
+            {
+                "subTypeName": "其他餐饮美食",
+                "subType": "2015061690000027"
+            },
+            {
+                "subTypeName": "创意菜",
+                "subType": "2015050700000057"
+            },
+            {
+                "subTypeName": "素食",
+                "subType": "2015050700000061"
+            },
+            {
+                "subTypeName": "采摘/农家乐",
+                "subType": "2016070500193665"
+            },
+            {
+                "subTypeName": "土菜/农家菜",
+                "subType": "2016031800162476"
+            }
+        ],
+        "subType": "2015050700000009"
+    },
+    {
+        "subTypeName": "烧烤",
+        "subTypes": [
+            {
+                "subTypeName": "其它烧烤",
+                "subType": "2015061690000026"
+            },
+            {
+                "subTypeName": "中式烧烤",
+                "subType": "2015050700000048"
+            },
+            {
+                "subTypeName": "拉美烧烤",
+                "subType": "2015050700000049"
+            },
+            {
+                "subTypeName": "日式烧烤",
+                "subType": "2015050700000050"
+            },
+            {
+                "subTypeName": "铁板烧",
+                "subType": "2015050700000051"
+            },
+            {
+                "subTypeName": "韩式烧烤",
+                "subType": "2015050700000052"
+            }
+        ],
+        "subType": "2015050700000007"
+    },
+    {
+        "subTypeName": "生鲜",
+        "subTypes": [],
+        "subType": "2020021300310139"
+    },
+    {
+        "subTypeName": "水果",
+        "subTypes": [],
+        "subType": "2015050700000041"
+    },
+    {
+        "subTypeName": "汤/粥/煲/砂锅/炖菜",
+        "subTypes": [
+            {
+                "subTypeName": "其它",
+                "subType": "2015061690000025"
+            },
+            {
+                "subTypeName": "粥",
+                "subType": "2015050700000053"
+            },
+            {
+                "subTypeName": "汤",
+                "subType": "2015050700000054"
+            },
+            {
+                "subTypeName": "砂锅/煲类/炖菜",
+                "subType": "2015050700000055"
+            }
+        ],
+        "subType": "2015050700000008"
+    },
+    {
+        "subTypeName": "日韩料理",
+        "subTypes": [],
+        "subType": "2015050700000059"
+    },
+    {
+        "subTypeName": "西餐",
+        "subTypes": [],
+        "subType": "2015050700000058"
+    },
+    {
+        "subTypeName": "东南亚菜",
+        "subTypes": [],
+        "subType": "2015050700000060"
+    },
+    {
+        "subTypeName": "休闲茶饮",
+        "subTypes": [
+            {
+                "subTypeName": "咖啡",
+                "subType": "2015050700000042"
+            },
+            {
+                "subTypeName": "奶茶果汁",
+                "subType": "2015050700000043"
+            },
+            {
+                "subTypeName": "冰激凌",
+                "subType": "2015050700000045"
+            },
+            {
+                "subTypeName": "茶馆",
+                "subType": "2020061100320945"
+            },
+            {
+                "subTypeName": "饮品/甜点",
+                "subType": "2015050700000047"
+            },
+            {
+                "subTypeName": "酒吧",
+                "subType": "2015091100061275"
+            }
+        ],
+        "subType": "2016042200000088"
+    },
+    {
+        "subTypeName": "休闲食品",
+        "subTypes": [
+            {
+                "subTypeName": "其它休闲食品",
+                "subType": "2015061690000029"
+            },
+            {
+                "subTypeName": "零食",
+                "subType": "2015050700000040"
+            },
+            {
+                "subTypeName": "美食特产",
+                "subType": "2016062900190066"
+            }
+        ],
+        "subType": "2015050700000005"
+    },
+    {
+        "subTypeName": "中餐",
+        "subTypes": [
+            {
+                "subTypeName": "淮扬菜",
+                "subType": "2016031800159500"
+            },
+            {
+                "subTypeName": "川菜",
+                "subType": "2015050700000010"
+            },
+            {
+                "subTypeName": "湘菜",
+                "subType": "2015050700000011"
+            },
+            {
+                "subTypeName": "湖北菜",
+                "subType": "2015050700000012"
+            },
+            {
+                "subTypeName": "台湾菜",
+                "subType": "2015050700000013"
+            },
+            {
+                "subTypeName": "新疆菜",
+                "subType": "2015050700000014"
+            },
+            {
+                "subTypeName": "江浙菜",
+                "subType": "2015050700000015"
+            },
+            {
+                "subTypeName": "云南菜",
+                "subType": "2015050700000016"
+            },
+            {
+                "subTypeName": "贵州菜",
+                "subType": "2015050700000017"
+            },
+            {
+                "subTypeName": "西北菜",
+                "subType": "2015050700000018"
+            },
+            {
+                "subTypeName": "东北菜",
+                "subType": "2015050700000019"
+            },
+            {
+                "subTypeName": "香锅/烤鱼",
+                "subType": "2015050700000020"
+            },
+            {
+                "subTypeName": "海鲜河鲜",
+                "subType": "2015050700000021"
+            },
+            {
+                "subTypeName": "其它地方菜",
+                "subType": "2015050700000022"
+            },
+            {
+                "subTypeName": "闽菜",
+                "subType": "2016031800156722"
+            },
+            {
+                "subTypeName": "鲁菜",
+                "subType": "2016031800152626"
+            },
+            {
+                "subTypeName": "上海本帮菜",
+                "subType": "2016031800158042"
+            },
+            {
+                "subTypeName": "粤菜/茶餐厅",
+                "subType": "2015052200000062"
+            },
+            {
+                "subTypeName": "海南菜",
+                "subType": "2016010600120962"
+            },
+            {
+                "subTypeName": "徽菜",
+                "subType": "2016031800154367"
+            },
+            {
+                "subTypeName": "晋菜",
+                "subType": "2016031800154368"
+            },
+            {
+                "subTypeName": "北京菜",
+                "subType": "2020061100315996"
+            },
+            {
+                "subTypeName": "豫菜",
+                "subType": "2016031800155597"
+            },
+            {
+                "subTypeName": "广西菜",
+                "subType": "2021041900340730"
+            },
+            {
+                "subTypeName": "江西菜",
+                "subType": "2021041900340731"
+            }
+        ],
+        "subType": "2015050700000001"
+    },
+    {
+        "subTypeName": "自助餐",
+        "subTypes": [],
+        "subType": "2015050700000056"
+    }
+]
