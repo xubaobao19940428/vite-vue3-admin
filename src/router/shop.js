@@ -20,7 +20,7 @@ const shop = {
             path: 'supplierShop',
             name: 'supplierShop',
             component: () =>
-                import ('@/view/shop/supplierShop'),
+                import ('@/view/shop/supplierShop/index.vue'),
             meta: {
                 key: 'MENU_SUPPLIER_SHOP',
                 title: '店铺管理',
@@ -31,7 +31,7 @@ const shop = {
             path: 'editSupplierShop',
             name: 'editSupplierShop',
             component: () =>
-                import ('@/view/shop/supplierShop/editSupplierShop'),
+                import ('@/view/shop/supplierShop/editSupplierShop.vue'),
             hidden: true,
             meta: {
                 key: 'MENU_EDIT_SUPPLIER_SHOP',

@@ -221,7 +221,7 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import addAcountDialog from './shopComponents/addAcountDialog.vue'
 import { addAssistant, assistants, delAssistant } from '@/api/newJson/account'
 import { getSellers, getShops } from '@/api/newJson/shop'

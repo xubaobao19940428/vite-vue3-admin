@@ -121,7 +121,7 @@
 <script>
 import { ref, reactive } from 'vue'
 import { intentionOrder } from '@/api/newJson/order'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 export default {
 	setup() {
 		const count = ref(0)

@@ -205,7 +205,7 @@
 <script>
 import { ref, reactive } from 'vue'
 import { productList, batchModifyShelve } from '@/api/newJson/product'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import { getSellers } from '@/api/newJson/shop'
 import { splitData } from '@/utils/index'
 import offSaleDialog from './components/offSale.vue'

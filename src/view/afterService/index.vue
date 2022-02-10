@@ -147,7 +147,7 @@ import {
 } from '@/api/newJson/service.js'
 import { mapState } from 'vuex'
 import { defineComponent, ref } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 export default defineComponent({
 	setup() {
 		const dialog = ref(false)

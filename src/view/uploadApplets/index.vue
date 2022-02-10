@@ -135,7 +135,7 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import addImgDialog from './addImgDialog.vue'
 import { uploadApplets, queryAssetsList } from '@/api/newJson'
 export default {

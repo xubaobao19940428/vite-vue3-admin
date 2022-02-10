@@ -76,7 +76,7 @@ import {
 	saveOrUpdateConfig,
 	configDetail,
 } from '@/api/newJson/pageEdit'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import addCommonDialog from './components/addCommonDialog.vue'
 export default {
 	data() {

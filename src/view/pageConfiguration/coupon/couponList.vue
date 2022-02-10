@@ -400,7 +400,7 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import { uploadApplets } from '@/api/newJson'
 import {
 	getCoupons,

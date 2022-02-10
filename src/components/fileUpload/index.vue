@@ -89,7 +89,7 @@
 </template>
 <script>
 import { uploadFileRequest } from '@/api/newJson/file'
-import { stringToArray, arrayToString } from '@/js/common/filter'
+import { stringToArray, arrayToString } from '@/js/filter'
 // import imagePreview from '@/components/imagePreview'
 // import Sortable from 'sortablejs';.
 

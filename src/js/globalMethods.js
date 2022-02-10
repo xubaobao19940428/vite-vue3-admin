@@ -126,7 +126,8 @@ const dealShowFileSrc = (img) => {
     if (img && img.indexOf('http') != -1) {
         return img
     }
-    return img ? process.env.VUE_APP_FILE_URL + img : ''
+    return img ?
+        import.meta.env.VITE_APP_FILE_URL + img : ''
 }
 
 // 获取积分单位

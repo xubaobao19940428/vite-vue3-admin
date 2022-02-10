@@ -259,7 +259,7 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import shopAccountsDialog from './components/shopAccountsDialog.vue'
 import { getSellers, getShops } from '@/api/newJson/shop'
 import { clearsShop, accountsShop } from '@/api/newJson/account.js'

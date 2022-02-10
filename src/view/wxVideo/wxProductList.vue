@@ -377,7 +377,7 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent.vue'
+import noDataComponent from '@/components/noDataComponent/index.vue'
 import { getSellers } from '@/api/newJson/shop'
 import { splitData } from '@/utils/index'
 import {

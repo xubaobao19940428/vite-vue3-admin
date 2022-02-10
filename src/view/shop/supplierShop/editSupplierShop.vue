@@ -1,126 +1,151 @@
 <!--  -->
 <template>
-    <div class="edit_supplier_shop">
-        <el-form :model="shopInfo"
-                 size="medium"
-                 ref="shopInfo"
-                 :rules="shopInfoRule"
-                 label-width="100px">
-            <div class="shop_info_header">
-                <el-form-item label="店铺开关">
-                    <el-switch v-model="shopInfo.status"
-                               :active-value="1"
-                               :inactive-value="0"></el-switch>
-                </el-form-item>
-                <el-button type="primary"
-                           size="medium"
-                           @click="saveShopInfo">确定</el-button>
-            </div>
-            <el-card class="box-card">
-                <template class="clearfix"
-                          style="font-size:20px;font-weight:900"
-                          #header>
-                    <span>地址信息</span>
-                </template>
-                <el-row :gutter="20">
-                    <el-col :span="12">
-                        <el-form-item label="经营地址"
-                                      prop="address">
-                            <div id="businessAddress"
-                                 class="mar-b-20"></div>
-                            <el-cascader class="mar-b-20"
-                                         v-model="businessAddress"
-                                         :props="{ value: 'value', label: 'label' }"
-                                         :options="areaData"
-                                         @change="
-                                    data => {
-                                        return addressChange(data, 'address');
-                                    }
-                                "></el-cascader>
-                            <el-input v-model="shopInfo.address"
-                                      clearable
-                                      style="width:300px;"
-                                      id="businessAddressInput"
-                                      placeholder="请输入详细地址"
-                                      @change="changeGeoCode"></el-input>
-                        </el-form-item>
+	<div class="edit_supplier_shop">
+		<el-form
+			:model="shopInfo"
+			size="medium"
+			ref="shopInfo"
+			:rules="shopInfoRule"
+			label-width="100px"
+		>
+			<div class="shop_info_header">
+				<el-form-item label="店铺开关">
+					<el-switch
+						v-model="shopInfo.status"
+						:active-value="1"
+						:inactive-value="0"
+					></el-switch>
+				</el-form-item>
+				<el-button type="primary" size="medium" @click="saveShopInfo"
+					>确定</el-button
+				>
+			</div>
+			<el-card class="box-card">
+				<template
+					class="clearfix"
+					style="font-size: 20px; font-weight: 900"
+					#header
+				>
+					<span>地址信息</span>
+				</template>
+				<el-row :gutter="20">
+					<el-col :span="12">
+						<el-form-item label="经营地址" prop="address">
+							<div id="businessAddress" class="mar-b-20"></div>
+							<el-cascader
+								class="mar-b-20"
+								v-model="businessAddress"
+								:props="{ value: 'value', label: 'label' }"
+								:options="areaData"
+								@change="
+									(data) => {
+										return addressChange(data, 'address')
+									}
+								"
+							></el-cascader>
+							<el-input
+								v-model="shopInfo.address"
+								clearable
+								style="width: 300px"
+								id="businessAddressInput"
+								placeholder="请输入详细地址"
+								@change="changeGeoCode"
+							></el-input>
+						</el-form-item>
 
-                        <el-form-item label="店名："
-                                      prop="name">
-                            <el-input placeholder="请输入店名"
-                                      v-model="shopInfo.name"
-                                      style="width:500px;"></el-input>
-                        </el-form-item>
-                        <el-form-item label="店名简称："
-                                      prop="shortName">
-                            <el-input placeholder="请输入店铺简称"
-                                      v-model="shopInfo.shortName"
-                                      style="width:500px;"></el-input>
-                        </el-form-item>
-                        <el-form-item label="客服电话："
-                                      prop="customerPhone">
-                            <el-input style="width:500px"
-                                      v-model="shopInfo.customerPhone"
-                                      placehodler="请输入客服电话"></el-input>
-                        </el-form-item>
-                        <el-form-item label="类目："
-                                      prop="subTypes">
-                            <el-cascader class="mar-b-20"
-                                         style="width:500px"
-                                         v-model="shopInfo.subTypes"
-                                         :show-all-levels="false"
-                                         :props="{
-                                    value: 'subType',
-                                    label: 'subTypeName',
-                                    children: 'subTypes',
-                                    multiple: true,
-                                    emitPath: false,
-                                }"
-                                         :options="categoryData"
-                                         @change="changeCategory"></el-cascader>
-                        </el-form-item>
-                        <div>
-                            <el-form-item label="经营资质"
-                                          prop="industryLicense"
-                                          class="el_uploadimg">
-                                <c-upload :limit="1"
-                                          style="margin-left:10px;"
-                                          ref="industryLicense"
-                                          type="text"
-                                          :textDesc="'许可证'"
-                                          :fileList="shopInfo.industryLicense"
-                                          @setData="setCoverImg3"></c-upload>
-                                <c-upload :limit="6"
-                                          style="margin-left:10px;"
-                                          ref="businessLicense"
-                                          type="other"
-                                          :textDesc="'企业营业执照'"
-                                          :fileList="shopInfo.businessLicense"
-                                          @setData="setCoverImg"></c-upload>
-                            </el-form-item>
-                        </div>
-                    </el-col>
-                    <el-col :span="12">
-                        <el-form-item label="关联商家："
-                                      prop="sellerId">
-                            <el-select v-model="shopInfo.sellerId"
-                                       style="width:500px;"
-                                       placeholder="请选择关联商家"
-                                       :disabled="type == 'edit' || type == 'check'">
-                                <el-option v-for="(item, index) in supplierList"
-                                           :key="index"
-                                           :label="item.name"
-                                           :value="item.id"></el-option>
-                            </el-select>
-                        </el-form-item>
-                        <el-form-item label="营业时间："
-                                      prop="openTimeStr"
-                                      required>
-                            <el-input placeholder="请输入营业时间"
-                                      v-model="shopInfo.openTimeStr"
-                                      style="width:500px;"></el-input>
-                        </el-form-item>
-                        <!-- <el-form-item label="营业时间：" required>
+						<el-form-item label="店名：" prop="name">
+							<el-input
+								placeholder="请输入店名"
+								v-model="shopInfo.name"
+								style="width: 500px"
+							></el-input>
+						</el-form-item>
+						<el-form-item label="店名简称：" prop="shortName">
+							<el-input
+								placeholder="请输入店铺简称"
+								v-model="shopInfo.shortName"
+								style="width: 500px"
+							></el-input>
+						</el-form-item>
+						<el-form-item label="客服电话：" prop="customerPhone">
+							<el-input
+								style="width: 500px"
+								v-model="shopInfo.customerPhone"
+								placehodler="请输入客服电话"
+							></el-input>
+						</el-form-item>
+						<el-form-item label="类目：" prop="subTypes">
+							<el-cascader
+								class="mar-b-20"
+								style="width: 500px"
+								v-model="shopInfo.subTypes"
+								:show-all-levels="false"
+								:props="{
+									value: 'subType',
+									label: 'subTypeName',
+									children: 'subTypes',
+									multiple: true,
+									emitPath: false,
+								}"
+								:options="categoryData"
+								@change="changeCategory"
+							></el-cascader>
+						</el-form-item>
+						<div>
+							<el-form-item
+								label="经营资质"
+								prop="industryLicense"
+								class="el_uploadimg"
+							>
+								<c-upload
+									:limit="1"
+									style="margin-left: 10px"
+									ref="industryLicense"
+									type="text"
+									:textDesc="'许可证'"
+									:fileList="shopInfo.industryLicense"
+									@setData="setCoverImg3"
+								></c-upload>
+								<c-upload
+									:limit="6"
+									style="margin-left: 10px"
+									ref="businessLicense"
+									type="other"
+									:textDesc="'企业营业执照'"
+									:fileList="shopInfo.businessLicense"
+									@setData="setCoverImg"
+								></c-upload>
+							</el-form-item>
+						</div>
+					</el-col>
+					<el-col :span="12">
+						<el-form-item label="关联商家：" prop="sellerId">
+							<el-select
+								v-model="shopInfo.sellerId"
+								style="width: 500px"
+								placeholder="请选择关联商家"
+								:disabled="type == 'edit' || type == 'check'"
+							>
+								<el-option
+									v-for="(item, index) in supplierList"
+									:key="index"
+									:label="item.name"
+									:value="item.id"
+								></el-option>
+							</el-select>
+						</el-form-item>
+						<el-form-item
+							label="营业时间："
+							prop="openTimeStr"
+							required
+						>
+							<el-input
+								placeholder="请输入营业时间"
+								v-model="shopInfo.openTimeStr"
+								style="width: 500px"
+							></el-input>
+						</el-form-item>
+						<!-- <el-form-item label="营业时间：" required>
                             <el-form-item v-for="(item, index) in shopInfo.openTime" :key="index">
                                 <el-select v-model="item.days" multiple placeholder="请选择营业日期" style="width:500px" @focus="changeTime(index)">
                                     <el-option
@@ -168,83 +193,114 @@
                             </el-form-item>
                             <el-button type="text" @click="addOpenTime">新增营业时间</el-button>
                         </el-form-item> -->
-                        <el-form-item label="店铺logo："
-                                      class="el_uploadimg"
-                                      required>
-                            <c-upload :limit="1"
-                                      ref="logo"
-                                      type="text"
-                                      :textDesc="'店铺logo'"
-                                      :fileList="shopInfo.logo"
-                                      @setData="setCoverImgLogo"></c-upload>
-                        </el-form-item>
-                        <el-form-item label="配送区域">
-                            <el-select v-model="shopInfo.fencingId"
-                                       @change="changeFencingId"
-                                       placeholder="请选择配送区域"
-                                       style="width:500px">
-                                <el-option v-for="(item, index) in fencingList"
-                                           :key="index"
-                                           :label="item.title"
-                                           :value="item.id"></el-option>
-                            </el-select>
-                            <el-button type="primary"
-                                       size="small"
-                                       style="margin-top:20px;"
-                                       @click="viewArea">查看区域</el-button>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-            </el-card>
-            <!--结算方式--->
-            <el-card class="box-card">
-                <template class="clearfix"
-                          style="font-size:20px;font-weight:900"
-                          #header>
-                    <span>结算方式</span>
-                </template>
-                <div>
-                    <el-form-item label="商家结算银行与支行："
-                                  label-width="170px"
-                                  prop="bankName">
-                        <el-input style="width:500px"
-                                  v-model="shopInfo.bankName"></el-input>
-                    </el-form-item>
-                    <el-form-item label="银行卡号："
-                                  label-width="170px"
-                                  prop="bankCardNo">
-                        <el-input style="width:500px"
-                                  v-model="shopInfo.bankCardNo"></el-input>
-                    </el-form-item>
-                    <el-form-item label="收款人姓名："
-                                  label-width="170px"
-                                  prop="bankPersonalName">
-                        <el-input style="width:500px"
-                                  v-model="shopInfo.bankPersonalName"></el-input>
-                    </el-form-item>
-                    <!-- <el-form-item label="收款人邮箱：" label-width="170px">
+						<el-form-item
+							label="店铺logo："
+							class="el_uploadimg"
+							required
+						>
+							<c-upload
+								:limit="1"
+								ref="logo"
+								type="text"
+								:textDesc="'店铺logo'"
+								:fileList="shopInfo.logo"
+								@setData="setCoverImgLogo"
+							></c-upload>
+						</el-form-item>
+						<el-form-item label="配送区域">
+							<el-select
+								v-model="shopInfo.fencingId"
+								@change="changeFencingId"
+								placeholder="请选择配送区域"
+								style="width: 500px"
+							>
+								<el-option
+									v-for="(item, index) in fencingList"
+									:key="index"
+									:label="item.title"
+									:value="item.id"
+								></el-option>
+							</el-select>
+							<el-button
+								type="primary"
+								size="small"
+								style="margin-top: 20px"
+								@click="viewArea"
+								>查看区域</el-button
+							>
+						</el-form-item>
+					</el-col>
+				</el-row>
+			</el-card>
+			<!--结算方式--->
+			<el-card class="box-card">
+				<template
+					class="clearfix"
+					style="font-size: 20px; font-weight: 900"
+					#header
+				>
+					<span>结算方式</span>
+				</template>
+				<div>
+					<el-form-item
+						label="商家结算银行与支行："
+						label-width="170px"
+						prop="bankName"
+					>
+						<el-input
+							style="width: 500px"
+							v-model="shopInfo.bankName"
+						></el-input>
+					</el-form-item>
+					<el-form-item
+						label="银行卡号："
+						label-width="170px"
+						prop="bankCardNo"
+					>
+						<el-input
+							style="width: 500px"
+							v-model="shopInfo.bankCardNo"
+						></el-input>
+					</el-form-item>
+					<el-form-item
+						label="收款人姓名："
+						label-width="170px"
+						prop="bankPersonalName"
+					>
+						<el-input
+							style="width: 500px"
+							v-model="shopInfo.bankPersonalName"
+						></el-input>
+					</el-form-item>
+					<!-- <el-form-item label="收款人邮箱：" label-width="170px">
                         <el-input style="width:500px"></el-input>
                     </el-form-item> -->
-                    <el-form-item label="收款人电话："
-                                  label-width="170px"
-                                  prop="contactPhone">
-                        <el-input style="width:500px"
-                                  v-model="shopInfo.contactPhone"></el-input>
-                    </el-form-item>
-                </div>
-            </el-card>
-        </el-form>
-        <viewAreaDialog :dialogFormVisible="dialogFormVisible"
-                        ref="viewAreaDialog"
-                        :areaInfo="areaInfo"
-                        @close-dialog="closeDialog"></viewAreaDialog>
-    </div>
+					<el-form-item
+						label="收款人电话："
+						label-width="170px"
+						prop="contactPhone"
+					>
+						<el-input
+							style="width: 500px"
+							v-model="shopInfo.contactPhone"
+						></el-input>
+					</el-form-item>
+				</div>
+			</el-card>
+		</el-form>
+		<viewAreaDialog
+			:dialogFormVisible="dialogFormVisible"
+			ref="viewAreaDialog"
+			:areaInfo="areaInfo"
+			@close-dialog="closeDialog"
+		></viewAreaDialog>
+	</div>
 </template>
 
 <script>
 import areaData from '@/data/area.json'
 import categoryData from '@/data/category.json'
-import cUpload from '@/components/fileUpload'
+import cUpload from '@/components/fileUpload/index.vue'
 import {
 	getSellers,
 	addShop,
@@ -253,7 +309,7 @@ import {
 	fencingPage,
 } from '@/api/newJson/shop'
 import { getDivisionGps } from '@/api/newJson/order'
-import viewAreaDialog from './viewAreaDialog'
+import viewAreaDialog from './viewAreaDialog.vue'
 export default {
 	data() {
 		const imgurlValitor = (rule, value, callback) => {
