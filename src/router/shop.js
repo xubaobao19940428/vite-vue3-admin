@@ -79,7 +79,7 @@ const shop = {
             path: 'productShelveStatusList',
             name: 'productShelveStatusList',
             component: () =>
-                import ('@/view/product/productShelveStatus'),
+                import ('@/view/product/productShelveStatus/index.vue'),
             meta: {
                 keepAlive: false,
                 key: 'MENU_PRODUCT_SHELVESTATUS',
@@ -91,7 +91,7 @@ const shop = {
             path: 'settleShop',
             name: 'settleShop',
             component: () =>
-                import ('@/view/shop/settleShop'),
+                import ('@/view/shop/settleShop/index.vue'),
             meta: {
                 keepAlive: false,
                 key: 'MENU_SETTLE_SHOP',
@@ -103,7 +103,7 @@ const shop = {
             path: 'shopAccount',
             name: 'shopAccount',
             component: () =>
-                import ('@/view/shop/shopAccount'),
+                import ('@/view/shop/shopAccount.vue'),
             meta: {
                 keepAlive: false,
                 key: 'MENU_SETTLE_SHOP',

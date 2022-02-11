@@ -10,9 +10,9 @@ export default ({ mode }) => {
             proxy: {
                 // 选项写法
                 '/mmxx_front/': {
-                    // target: 'https://gateway.mehome.shop/',
+                    target: 'https://gateway.mehome.shop/',
                     // target: 'https://gateway-pre.memall.shop/', //预发
-                    target: 'https://gateway.melive.shop/', // 线上
+                    // target: 'https://gateway.melive.shop/', // 线上
                     changeOrigin: true,
                     pathRewrite: {
                         '^/mmxx_front/': 'mmxx_front/',

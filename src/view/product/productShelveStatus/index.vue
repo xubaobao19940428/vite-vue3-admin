@@ -89,12 +89,20 @@
 									trigger="hover"
 								>
 									<img
-										:src="scope.row.cover[0]"
+										:src="
+											scope.row.cover
+												? scope.row.cover[0]
+												: ''
+										"
 										class="previewImage"
 									/>
 									<template #reference>
 										<img
-											:src="scope.row.cover[0]"
+											:src="
+												scope.row.cover
+													? scope.row.cover[0]
+													: ''
+											"
 											class="image-box"
 										/>
 									</template>

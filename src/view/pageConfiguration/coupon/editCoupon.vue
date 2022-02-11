@@ -258,7 +258,7 @@ import { getSellers } from '@/api/newJson/shop'
 import { productList } from '@/api/newJson/product'
 import { addCoupon, couponDetail, modifyCoupon } from '@/api/newJson/coupon.js'
 import { divisionList } from '@/data/globalData.js'
-import cUpload from '@/components/fileUpload'
+import cUpload from '@/components/fileUpload/index.vue'
 import { mapState } from 'vuex'
 export default defineComponent({
 	setup() {

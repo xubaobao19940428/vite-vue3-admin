@@ -1,4 +1,4 @@
-// import home from './home';
+import home from './home'
 import shop from './shop.js'
 import order from './order.js'
 // import afterService from './afterService';
@@ -35,7 +35,7 @@ const routes = [{
     //         noPermission: true,
     //     },
     // },
-    // home,
+    home,
     shop,
     user,
     order,

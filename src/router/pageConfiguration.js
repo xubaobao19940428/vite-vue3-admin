@@ -42,7 +42,7 @@ const pageConfiguration = {
             path: 'vipPage',
             name: 'vipPage',
             component: () =>
-                import ('@/view/pageConfiguration/vipPage.vue'),
+                import ('@/view/pageConfiguration/vipPage/index.vue'),
             meta: {
                 key: 'MENU_VIP_PAGE',
                 title: '会员权益页',
@@ -88,7 +88,9 @@ const pageConfiguration = {
             path: 'qyOptimizationProduct',
             name: 'qyOptimizationProduct',
             component: () =>
-                import ('@/view/pageConfiguration/qyOptimizationProduct.vue'),
+                import (
+                    '@/view/pageConfiguration/qyOptimizationProduct/index.vue'
+                ),
             hidden: true,
             meta: {
                 key: 'MENU_QYOPTIMIZATION_PRODUCT',

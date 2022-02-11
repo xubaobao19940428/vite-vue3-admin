@@ -1,6 +1,5 @@
 import router from '@/router'
 import { ElMessage } from 'element-plus'
-// import store from "@/store";
 import { param } from '@/utils'
 import md5 from 'js-md5'
 import axios from 'axios'

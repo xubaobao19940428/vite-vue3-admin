@@ -112,7 +112,6 @@
 					</el-table-column>
 				</el-table>
 			</div>
-			<!-- <no-data-component v-else></no-data-component> -->
 		</div>
 		<div class="pagination-box">
 			<el-pagination
@@ -135,7 +134,6 @@
 
 <script>
 import { ref, reactive } from 'vue'
-import noDataComponent from '@/components/noDataComponent/index.vue'
 import addImgDialog from './addImgDialog.vue'
 import { uploadApplets, queryAssetsList } from '@/api/newJson'
 export default {
@@ -166,7 +164,6 @@ export default {
 		}
 	},
 	components: {
-		noDataComponent,
 		addImgDialog,
 	},
 	computed: {},
