@@ -11,7 +11,9 @@ export default {
 		return {}
 	},
 	components: {},
-	mounted() {},
+	mounted() {
+        
+    },
 }
 
 // This starter template is using Vue 3 experimental <script setup> SFCs

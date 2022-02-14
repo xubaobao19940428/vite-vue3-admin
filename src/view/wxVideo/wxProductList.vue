@@ -389,7 +389,7 @@ import {
 	modifyDownstreamPriceStock,
 	refreshAll,
 } from '@/api/newJson/wxProduct'
-import additionalEditDialig from './components/additionalEditDialig'
+import additionalEditDialig from './components/additionalEditDialig.vue'
 export default {
 	setup() {
 		const count = ref(0)
@@ -434,6 +434,7 @@ export default {
 	},
 	computed: {},
 	mounted() {
+        console.log(this)
 		if (this.$route.query.sellerId) {
 			this.queryData.sellerId = Number(this.$route.query.sellerId)
 		}

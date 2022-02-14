@@ -39,28 +39,6 @@ const order = {
             },
         },
         {
-            path: '/403',
-            name: '403',
-            component: () =>
-                import ('@/view/403.vue'),
-            hidden: true,
-            meta: {
-                key: 'MENU_403',
-                title: '403',
-                noPermission: true,
-            },
-        },
-        // {
-        //     path: 'distributionManagement',
-        //     name: 'distributionManagement',
-        //     component: () => import('@/view/order/distributionManagement.vue'),
-        //     meta: {
-        //         key: 'MENU_ORDER_DISTRIBUTION_MANAGEMENT',
-        //         title: '8000126',
-        //         icon: '',
-        //     },
-        // },
-        {
             path: 'meimiaotuanOrder',
             name: 'meimiaotuanOrder',
             component: () =>

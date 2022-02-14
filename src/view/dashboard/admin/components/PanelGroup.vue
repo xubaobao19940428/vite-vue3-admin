@@ -50,6 +50,7 @@
 			>
 				<div class="card-panel-icon-wrapper icon-money">
 					<!-- <svg-icon icon-class="money" class-name="card-panel-icon" /> -->
+					<i class="iconfont">&#xe60b;</i>
 				</div>
 				<div class="card-panel-description">
 					<div class="card-panel-text">Purchases</div>
