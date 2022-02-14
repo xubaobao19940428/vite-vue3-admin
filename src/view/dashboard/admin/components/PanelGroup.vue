@@ -10,10 +10,11 @@
 						icon-class="peoples"
 						class-name="card-panel-icon"
 					/> -->
+					<i class="iconfont icon-people">&#xe647;</i>
 				</div>
 				<div class="card-panel-description">
 					<div class="card-panel-text">New Visits</div>
-					<count-to
+					<vue-count-to
 						:start-val="0"
 						:end-val="102400"
 						:duration="2600"
@@ -29,6 +30,7 @@
 						icon-class="message"
 						class-name="card-panel-icon"
 					/> -->
+					<i class="iconfont">&#xe721;</i>
 				</div>
 				<div class="card-panel-description">
 					<div class="card-panel-text">Messages</div>
@@ -70,6 +72,7 @@
 						icon-class="shopping"
 						class-name="card-panel-icon"
 					/> -->
+					<i class="iconfont">&#xe765;</i>
 				</div>
 				<div class="card-panel-description">
 					<div class="card-panel-text">Shoppings</div>
@@ -113,14 +116,17 @@ export default {
 		background: #fff;
 		box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.05);
 		border-color: rgba(0, 0, 0, 0.05);
-
+		.iconfont {
+			font-size: 45px;
+		}
 		&:hover {
 			.card-panel-icon-wrapper {
 				color: #fff;
 			}
 
 			.icon-people {
-				background: #40c9c6;
+				background: #34bfa3;
+				color: #ffffff;
 			}
 
 			.icon-message {
@@ -137,7 +143,7 @@ export default {
 		}
 
 		.icon-people {
-			color: #40c9c6;
+			color: #34bfa3;
 		}
 
 		.icon-message {

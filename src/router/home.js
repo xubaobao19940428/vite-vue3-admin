@@ -4,7 +4,7 @@ const home = {
     path: '/dashboard',
     component: layOut,
     redirect: '/dashboard/welcome',
-    meta: { title: '首页', icon: '&#xe62d;', key: 'MENU_DASHBOARD' },
+    meta: { title: '首页', icon: '&#xe6cb;', key: 'MENU_DASHBOARD' },
     children: [{
         path: 'welcome',
         name: 'dashboard',
