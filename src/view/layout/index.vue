@@ -9,6 +9,8 @@
         <div class="memall_right">
             <!--头部文件-->
             <memall-header></memall-header>
+            <!--头部tags-view-->
+            <tags-view></tags-view>
             <router-view class="layout_view"></router-view>
         </div>
     </div>
@@ -17,7 +19,9 @@
 <script>
 import memallHeader from './header/header.vue';
 import memallNav from './nav/index.vue';
+import tagsView from './header/tagsView.vue'
 import router from '@/router/index.js';
+
 export default {
     data() {
         return {};
@@ -26,6 +30,7 @@ export default {
     components: {
         memallHeader,
         memallNav,
+        tagsView
     },
 
     computed: {

@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-// import store from '../store';
+import store from '../store';
 import { getToken } from '@/utils/auth';
 import routes from './routes';
 
@@ -16,6 +16,9 @@ const router = createRouter({
 });
 const whiteList = ['/login']; // no redirect whitelist
 router.beforeEach((to, from, next) => {
+    if(to.matched.length>=2){
+        store.dispatch('setTagsViewListaction',to)
+    }
     if (getToken()) {
         next();
     } else {

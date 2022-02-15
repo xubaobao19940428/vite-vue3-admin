@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-    <div class="add_account_dialog">
-        <el-dialog v-model="dialogFormVisible" :title="title" size="medium" :before-close="closeDialog">
+    <div class="add_account_dialog" >
+        <el-dialog v-model="dialogFormVisible" v-el-drag-dialog :title="title" size="medium" :before-close="closeDialog">
             <el-form :model="form" ref="form" :rules="formRule" :label-width="formLabelWidth">
                 <el-form-item label="配置类型" prop="configType">
                     <el-select v-model="form.configType" placeholder="请选择账户类型" style="width:100%">
@@ -10,7 +10,7 @@
                 </el-form-item>
 
                 <el-form-item label="内容" prop="configValue">
-                    <el-input v-model="form.configValue" autocomplete="off" placeholder="请输入内容用英文,隔开" type="textarea"></el-input>
+                    <el-input v-model="form.configValue" autocomplete="off"  placeholder="请输入内容用英文,隔开" type="textarea"></el-input>
                     <div class="tips">
                         内容请用英文,隔开
                     </div>
@@ -84,7 +84,9 @@ export default {
 
     computed: {},
 
-    mounted() {},
+    mounted() {
+        console.log(this)
+    },
 
     methods: {
         closeDialog() {
@@ -105,6 +107,9 @@ export default {
                 }
             });
         },
+        dragDialog(){
+            console.log(this)
+        }
     },
 };
 </script>
