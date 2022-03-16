@@ -9,7 +9,7 @@
 			label-width="0px"
 			class="card-box login-form"
 		>
-			<h3 class="title">美妙心选后台</h3>
+			<h3 class="title">vue3-vite-admin</h3>
 			<el-form-item prop="phone">
 				<i class="iconfont">&#xe612;</i>
 				<el-input

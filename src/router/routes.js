@@ -2,17 +2,17 @@ import home from './home'
 import shop from './shop.js'
 import order from './order.js'
 // import afterService from './afterService';
-import user from './user.js'
-import pageConfiguration from './pageConfiguration.js'
-import applets from './applets.js'
-import duoduo from './duoduo.js'
-import fileCenter from './fileCenter.js'
-import koubei from './koubei.js'
-import wxVideo from './wxVideo.js'
+// import user from './user.js'
+// import pageConfiguration from './pageConfiguration.js'
+// import applets from './applets.js'
+// import duoduo from './duoduo.js'
+// import fileCenter from './fileCenter.js'
+// import koubei from './koubei.js'
+// import wxVideo from './wxVideo.js'
 // import capital from './capital';
 const routes = [{
         path: '/',
-        redirect: '/shop/supplierManage',
+        redirect: '/dashboard',
     },
     {
         path: '/login',
@@ -36,16 +36,16 @@ const routes = [{
     //     },
     // },
     home,
-    shop,
-    user,
-    order,
-    // afterService,
-    duoduo,
-    wxVideo,
-    applets,
-    koubei,
-    fileCenter,
-    pageConfiguration,
+    // shop,
+    // user,
+    // order,
+    // // afterService,
+    // duoduo,
+    // wxVideo,
+    // applets,
+    // koubei,
+    // fileCenter,
+    // pageConfiguration,
     // capital,
     // {
     //     path: '/:pathMatch(.*)*',
