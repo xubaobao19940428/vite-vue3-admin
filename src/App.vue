@@ -9,7 +9,7 @@ export default {
 	name: 'App',
 	data() {
 		return {
-            d:1,
+            
         }
 	},
 	components: {},
